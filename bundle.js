@@ -45,12 +45,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	__webpack_require__(3);
-	
 	__webpack_require__(4);
-	__webpack_require__(8);
 	
-	var app = __webpack_require__(12);
+	__webpack_require__(5);
+	__webpack_require__(9);
+	
+	var app = __webpack_require__(13);
 	
 	var a = new app.App();
 
@@ -58,22 +58,23 @@
 /***/ },
 /* 1 */,
 /* 2 */,
-/* 3 */
+/* 3 */,
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "index.html";
 
 /***/ },
-/* 4 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(5);
+	var content = __webpack_require__(6);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -90,10 +91,10 @@
 	}
 
 /***/ },
-/* 5 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
@@ -104,7 +105,7 @@
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports) {
 
 	/*
@@ -160,7 +161,7 @@
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -412,16 +413,16 @@
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(9);
+	var content = __webpack_require__(10);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -438,42 +439,43 @@
 	}
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "@keyframes spin {\n  100% {\n    transform: rotate(360deg);\n  }\n}\n#loading {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #060d0e;\n  transition: opacity 1s ease-out, background-color 1s ease;\n  color: #70b4c2;\n  z-index: 100;\n  display: flex;\n  flex-direction: column;\n  padding-top: 20vh;\n}\n#loading > * {\n  text-align: center;\n  margin-top: 2rem;\n}\n#loading .spinner {\n  transition: opacity 0.5s ease;\n  width: 64px;\n  height: 64px;\n  margin: 0 auto;\n  background-image: url(" + __webpack_require__(10) + ");\n  background-size: 100%;\n}\n#loading .spinner:after {\n  content: '';\n  display: block;\n  width: 64px;\n  height: 64px;\n  background-image: url(" + __webpack_require__(11) + ");\n  background-size: 100%;\n  animation: spin 2s linear infinite;\n}\n#loading .name {\n  display: none;\n  background-color: #70b4c2;\n  padding: 1rem 0;\n  font-size: 150%;\n  font-weight: bold;\n  color: #060d0e;\n}\n#loading .message {\n  opacity: 0.8;\n}\nbody.loaded #loading {\n  opacity: 0;\n  pointer-events: none;\n}\nbody.error #loading {\n  background-color: #140300;\n  color: #e06952;\n  opacity: 1;\n  pointer-events: auto;\n}\nbody.error #loading .spinner {\n  opacity: 0;\n}\nbody.error #loading .name {\n  background-color: #e06952;\n  color: #140300;\n}\n", ""]);
+	exports.push([module.id, "@keyframes spin {\n  100% {\n    transform: rotate(360deg);\n  }\n}\n#loading {\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: #060d0e;\n  transition: opacity 1s ease-out, background-color 1s ease;\n  color: #70b4c2;\n  z-index: 100;\n  display: flex;\n  flex-direction: column;\n  padding-top: 20vh;\n}\n#loading > * {\n  text-align: center;\n  margin-top: 2rem;\n}\n#loading .spinner {\n  transition: opacity 0.5s ease;\n  width: 64px;\n  height: 64px;\n  margin: 0 auto;\n  background-image: url(" + __webpack_require__(11) + ");\n  background-size: 100%;\n}\n#loading .spinner:after {\n  content: '';\n  display: block;\n  width: 64px;\n  height: 64px;\n  background-image: url(" + __webpack_require__(12) + ");\n  background-size: 100%;\n  animation: spin 2s linear infinite;\n}\n#loading .name {\n  display: none;\n  background-color: #70b4c2;\n  padding: 1rem 0;\n  font-size: 150%;\n  font-weight: bold;\n  color: #060d0e;\n}\n#loading .message {\n  opacity: 0.8;\n}\nbody.loaded #loading {\n  opacity: 0;\n  pointer-events: none;\n}\nbody.error #loading {\n  background-color: #140300;\n  color: #e06952;\n  opacity: 1;\n  pointer-events: auto;\n}\nbody.error #loading .spinner {\n  opacity: 0;\n}\nbody.error #loading .name {\n  background-color: #e06952;\n  color: #140300;\n}\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,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"
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	var $ = __webpack_require__(13);
+	var $ = __webpack_require__(14);
 	
-	var util = __webpack_require__(14);
-	var events = __webpack_require__(15);
+	var util = __webpack_require__(15);
+	var events = __webpack_require__(16);
 	
-	var map = __webpack_require__(16);
+	var airspace = __webpack_require__(17);
+	var map = __webpack_require__(19);
 	
 	class App extends events.Events {
 	
@@ -482,6 +484,10 @@
 	
 	    this.loadingError = false;
 	
+	    this.airspace = new airspace.Airspace();
+	
+	    this.last = util.time();
+	    
 	    $(document).ready(util.withScope(this, this.start));
 	  }
 	
@@ -512,6 +518,19 @@
 	
 	  loaded() {
 	    $('body').addClass('loaded');
+	
+	    this.last = util.time();
+	    this.tick();
+	  }
+	
+	  tick() {
+	    var now = util.time();
+	    this.elapsed = now - this.last;
+	
+	    this.airspace.tick();
+	    
+	    this.last = now;
+	    requestAnimationFrame(util.withScope(this, this.tick));
 	  }
 	
 	}
@@ -520,7 +539,7 @@
 
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10368,9 +10387,25 @@
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports) {
 
+	
+	function time() {
+	  return Date.now() * 0.001;
+	}
+	
+	// # lerp
+	//
+	// Interpolates `i` from range `il..ih` to `ol..oh`.
+	//
+	// ```js
+	// lerp(0, 50, 100, -50, 50); // returns 0
+	// ```
+	
+	function lerp(il, i, ih, ol, oh) {
+	  return ((i - il) / (ih - il)) * (oh - ol) + ol;
+	}
 	
 	// # getValue
 	// Gets a value from an object with the option to have a default
@@ -10406,12 +10441,14 @@
 	  };
 	}
 	
+	exports.time = time;
+	exports.lerp = lerp;
 	exports.getValue = getValue;
 	exports.withScope = withScope;
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	
@@ -10450,17 +10487,95 @@
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	__webpack_require__(17);
+	var util = __webpack_require__(15);
+	var events = __webpack_require__(16);
 	
-	var $ = __webpack_require__(13);
-	var mapboxgl = __webpack_require__(19);
+	var aircraft = __webpack_require__(18);
 	
-	var util = __webpack_require__(14);
-	var events = __webpack_require__(15);
+	class Airspace extends events.Events {
+	
+	  // `options`, if present, is an object.
+	  //
+	  // ```js
+	  // {
+	  //
+	  // }
+	  // ```
+	
+	  constructor(options) {
+	    options = options || {};
+	
+	    super();
+	
+	    this.aircraft = [];
+	  }
+	
+	  addAircraft(aircraft) {
+	    aircraft.setAirspace(this);
+	  }
+	
+	  tick() {
+	    
+	  }
+	
+	}
+	
+	exports.Airspace = Airspace;
+
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	var util = __webpack_require__(15);
+	var events = __webpack_require__(16);
+	
+	class Aircraft extends events.Events {
+	
+	  // `options`, if present, is an object.
+	  //
+	  // ```js
+	  // {
+	  //   callsign: 'SP-LRB',
+	  //   model: 'B788'
+	  // }
+	  // ```
+	
+	  constructor(options) {
+	    options = options || {};
+	
+	    super();
+	
+	    this.callsign = util.getValue(options, 'callsign', new Error('expected aircraft callsign'));
+	    this.model = util.getValue(options, 'model', new Error('expected aircraft model'));
+	  }
+	
+	  setAirspace(options) {
+	    
+	  }
+	
+	}
+	
+	exports.Aircraft = Aircraft;
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+	__webpack_require__(20);
+	
+	var $ = __webpack_require__(14);
+	var mapboxgl = __webpack_require__(22);
+	
+	var util = __webpack_require__(15);
+	var events = __webpack_require__(16);
 	
 	// This is my Mapbox access token. Don't use it for your own projects;
 	// instead, go to [Mapbox's](https://www.mapbox.com/) website, create
@@ -10490,6 +10605,8 @@
 	    
 	    this.map = new mapboxgl.Map({
 	      container: this.element.get(0),
+	      center: [-122.3790, 37.6213],
+	      zoom: 12,
 	      style: 'mapbox://styles/zlsa/cio4ufiti005qaengdlqomsz5'
 	    });
 	
@@ -10512,16 +10629,16 @@
 
 
 /***/ },
-/* 17 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(18);
+	var content = __webpack_require__(21);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
+	var update = __webpack_require__(8)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -10538,10 +10655,10 @@
 	}
 
 /***/ },
-/* 18 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(6)();
+	exports = module.exports = __webpack_require__(7)();
 	// imports
 	
 	
@@ -10552,7 +10669,7 @@
 
 
 /***/ },
-/* 19 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -10568,33 +10685,33 @@
 	// jshint -W079
 	var mapboxgl = module.exports = {};
 	
-	mapboxgl.Map = __webpack_require__(20);
-	mapboxgl.Control = __webpack_require__(199);
-	mapboxgl.Navigation = __webpack_require__(200);
-	mapboxgl.Geolocate = __webpack_require__(201);
-	mapboxgl.Attribution = __webpack_require__(198);
-	mapboxgl.Popup = __webpack_require__(202);
+	mapboxgl.Map = __webpack_require__(23);
+	mapboxgl.Control = __webpack_require__(202);
+	mapboxgl.Navigation = __webpack_require__(203);
+	mapboxgl.Geolocate = __webpack_require__(204);
+	mapboxgl.Attribution = __webpack_require__(201);
+	mapboxgl.Popup = __webpack_require__(205);
 	
-	mapboxgl.GeoJSONSource = __webpack_require__(157);
-	mapboxgl.VideoSource = __webpack_require__(159);
-	mapboxgl.ImageSource = __webpack_require__(162);
+	mapboxgl.GeoJSONSource = __webpack_require__(160);
+	mapboxgl.VideoSource = __webpack_require__(162);
+	mapboxgl.ImageSource = __webpack_require__(165);
 	
-	mapboxgl.Style = __webpack_require__(30);
+	mapboxgl.Style = __webpack_require__(33);
 	
-	mapboxgl.LngLat = __webpack_require__(160);
-	mapboxgl.LngLatBounds = __webpack_require__(191);
-	mapboxgl.Point = __webpack_require__(29);
+	mapboxgl.LngLat = __webpack_require__(163);
+	mapboxgl.LngLatBounds = __webpack_require__(194);
+	mapboxgl.Point = __webpack_require__(32);
 	
-	mapboxgl.Evented = __webpack_require__(27);
-	mapboxgl.util = __webpack_require__(22);
+	mapboxgl.Evented = __webpack_require__(30);
+	mapboxgl.util = __webpack_require__(25);
 	
-	mapboxgl.supported = __webpack_require__(26).supported;
+	mapboxgl.supported = __webpack_require__(29).supported;
 	
-	var ajax = __webpack_require__(73);
+	var ajax = __webpack_require__(76);
 	mapboxgl.util.getJSON = ajax.getJSON;
 	mapboxgl.util.getArrayBuffer = ajax.getArrayBuffer;
 	
-	var config = __webpack_require__(75);
+	var config = __webpack_require__(78);
 	mapboxgl.config = config;
 	
 	Object.defineProperty(mapboxgl, 'accessToken', {
@@ -10604,31 +10721,31 @@
 
 
 /***/ },
-/* 20 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Canvas = __webpack_require__(21);
-	var util = __webpack_require__(22);
-	var browser = __webpack_require__(26);
-	var Evented = __webpack_require__(27);
-	var DOM = __webpack_require__(28);
+	var Canvas = __webpack_require__(24);
+	var util = __webpack_require__(25);
+	var browser = __webpack_require__(29);
+	var Evented = __webpack_require__(30);
+	var DOM = __webpack_require__(31);
 	
-	var Style = __webpack_require__(30);
-	var AnimationLoop = __webpack_require__(149);
-	var Painter = __webpack_require__(163);
+	var Style = __webpack_require__(33);
+	var AnimationLoop = __webpack_require__(152);
+	var Painter = __webpack_require__(166);
 	
-	var Transform = __webpack_require__(186);
-	var Hash = __webpack_require__(187);
+	var Transform = __webpack_require__(189);
+	var Hash = __webpack_require__(190);
 	
-	var Interaction = __webpack_require__(188);
+	var Interaction = __webpack_require__(191);
 	
-	var Camera = __webpack_require__(197);
-	var LngLat = __webpack_require__(160);
-	var LngLatBounds = __webpack_require__(191);
-	var Point = __webpack_require__(29);
-	var Attribution = __webpack_require__(198);
+	var Camera = __webpack_require__(200);
+	var LngLat = __webpack_require__(163);
+	var LngLatBounds = __webpack_require__(194);
+	var Point = __webpack_require__(32);
+	var Attribution = __webpack_require__(201);
 	
 	var defaultMinZoom = 0;
 	var defaultMaxZoom = 20;
@@ -11689,13 +11806,13 @@
 
 
 /***/ },
-/* 21 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var isSupported = __webpack_require__(25);
+	var util = __webpack_require__(25);
+	var isSupported = __webpack_require__(28);
 	
 	module.exports = Canvas;
 	
@@ -11737,13 +11854,13 @@
 
 
 /***/ },
-/* 22 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var UnitBezier = __webpack_require__(23);
-	var Coordinate = __webpack_require__(24);
+	var UnitBezier = __webpack_require__(26);
+	var Coordinate = __webpack_require__(27);
 	
 	/**
 	 * Given a value `t` that varies between 0 and 1, return
@@ -12210,7 +12327,7 @@
 
 
 /***/ },
-/* 23 */
+/* 26 */
 /***/ function(module, exports) {
 
 	/*
@@ -12321,7 +12438,7 @@
 
 
 /***/ },
-/* 24 */
+/* 27 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12404,7 +12521,7 @@
 
 
 /***/ },
-/* 25 */
+/* 28 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12532,7 +12649,7 @@
 
 
 /***/ },
-/* 26 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12609,7 +12726,7 @@
 	 *   expected (i.e. a software renderer would be used)
 	 * @return {boolean}
 	 */
-	exports.supported = __webpack_require__(25);
+	exports.supported = __webpack_require__(28);
 	
 	exports.hardwareConcurrency = navigator.hardwareConcurrency || 8;
 	
@@ -12629,12 +12746,12 @@
 
 
 /***/ },
-/* 27 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
+	var util = __webpack_require__(25);
 	
 	/**
 	 * Methods mixed in to other classes for event capabilities.
@@ -12741,12 +12858,12 @@
 
 
 /***/ },
-/* 28 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
+	var Point = __webpack_require__(32);
 	
 	exports.create = function (tagName, className, container) {
 	    var el = document.createElement(tagName);
@@ -12820,7 +12937,7 @@
 
 
 /***/ },
-/* 29 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -12957,27 +13074,27 @@
 
 
 /***/ },
-/* 30 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Evented = __webpack_require__(27);
-	var StyleLayer = __webpack_require__(31);
-	var ImageSprite = __webpack_require__(72);
-	var GlyphSource = __webpack_require__(76);
-	var SpriteAtlas = __webpack_require__(87);
-	var LineAtlas = __webpack_require__(88);
-	var util = __webpack_require__(22);
-	var ajax = __webpack_require__(73);
-	var normalizeURL = __webpack_require__(74).normalizeStyleURL;
-	var browser = __webpack_require__(26);
-	var Dispatcher = __webpack_require__(89);
-	var AnimationLoop = __webpack_require__(149);
-	var validateStyle = __webpack_require__(42);
-	var Source = __webpack_require__(150);
-	var styleSpec = __webpack_require__(39);
-	var StyleFunction = __webpack_require__(35);
+	var Evented = __webpack_require__(30);
+	var StyleLayer = __webpack_require__(34);
+	var ImageSprite = __webpack_require__(75);
+	var GlyphSource = __webpack_require__(79);
+	var SpriteAtlas = __webpack_require__(90);
+	var LineAtlas = __webpack_require__(91);
+	var util = __webpack_require__(25);
+	var ajax = __webpack_require__(76);
+	var normalizeURL = __webpack_require__(77).normalizeStyleURL;
+	var browser = __webpack_require__(29);
+	var Dispatcher = __webpack_require__(92);
+	var AnimationLoop = __webpack_require__(152);
+	var validateStyle = __webpack_require__(45);
+	var Source = __webpack_require__(153);
+	var styleSpec = __webpack_require__(42);
+	var StyleFunction = __webpack_require__(38);
 	
 	module.exports = Style;
 	
@@ -13700,18 +13817,18 @@
 
 
 /***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleTransition = __webpack_require__(32);
-	var StyleDeclaration = __webpack_require__(34);
-	var styleSpec = __webpack_require__(39);
-	var validateStyle = __webpack_require__(42);
-	var parseColor = __webpack_require__(37);
-	var Evented = __webpack_require__(27);
+	var util = __webpack_require__(25);
+	var StyleTransition = __webpack_require__(35);
+	var StyleDeclaration = __webpack_require__(37);
+	var styleSpec = __webpack_require__(42);
+	var validateStyle = __webpack_require__(45);
+	var parseColor = __webpack_require__(40);
+	var Evented = __webpack_require__(30);
 	
 	module.exports = StyleLayer;
 	
@@ -13719,12 +13836,12 @@
 	
 	StyleLayer.create = function(layer, refLayer) {
 	    var Classes = {
-	        background: __webpack_require__(66),
-	        circle: __webpack_require__(67),
-	        fill: __webpack_require__(68),
-	        line: __webpack_require__(69),
-	        raster: __webpack_require__(70),
-	        symbol: __webpack_require__(71)
+	        background: __webpack_require__(69),
+	        circle: __webpack_require__(70),
+	        fill: __webpack_require__(71),
+	        line: __webpack_require__(72),
+	        raster: __webpack_require__(73),
+	        symbol: __webpack_require__(74)
 	    };
 	    return new Classes[(refLayer || layer).type](layer, refLayer);
 	};
@@ -14041,13 +14158,13 @@
 
 
 /***/ },
-/* 32 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var interpolate = __webpack_require__(33);
+	var util = __webpack_require__(25);
+	var interpolate = __webpack_require__(36);
 	
 	module.exports = StyleTransition;
 	
@@ -14125,7 +14242,7 @@
 
 
 /***/ },
-/* 33 */
+/* 36 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14170,14 +14287,14 @@
 
 
 /***/ },
-/* 34 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var MapboxGLFunction = __webpack_require__(35);
-	var parseColor = __webpack_require__(37);
-	var util = __webpack_require__(22);
+	var MapboxGLFunction = __webpack_require__(38);
+	var parseColor = __webpack_require__(40);
+	var util = __webpack_require__(25);
 	
 	module.exports = StyleDeclaration;
 	
@@ -14254,12 +14371,12 @@
 
 
 /***/ },
-/* 35 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var MapboxGLFunction = __webpack_require__(36);
+	var MapboxGLFunction = __webpack_require__(39);
 	
 	exports.interpolated = function(parameters) {
 	    var inner = MapboxGLFunction.interpolated(parameters);
@@ -14285,7 +14402,7 @@
 
 
 /***/ },
-/* 36 */
+/* 39 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -14456,13 +14573,13 @@
 
 
 /***/ },
-/* 37 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var parseCSSColor = __webpack_require__(38).parseCSSColor;
-	var util = __webpack_require__(22);
+	var parseCSSColor = __webpack_require__(41).parseCSSColor;
+	var util = __webpack_require__(25);
 	
 	var colorCache = {};
 	
@@ -14508,7 +14625,7 @@
 
 
 /***/ },
-/* 38 */
+/* 41 */
 /***/ function(module, exports) {
 
 	// (c) Dean McNamee <dean@gmail.com>, 2012.
@@ -14714,23 +14831,23 @@
 
 
 /***/ },
-/* 39 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(40);
+	module.exports = __webpack_require__(43);
 
 
 /***/ },
-/* 40 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(41);
+	module.exports = __webpack_require__(44);
 
 
 /***/ },
-/* 41 */
+/* 44 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -16143,12 +16260,12 @@
 	};
 
 /***/ },
-/* 42 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	module.exports = __webpack_require__(43);
+	module.exports = __webpack_require__(46);
 	
 	module.exports.emitErrors = function throwErrors(emitter, errors) {
 	    if (errors && errors.length) {
@@ -16171,15 +16288,15 @@
 
 
 /***/ },
-/* 43 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var validateConstants = __webpack_require__(44);
-	var validate = __webpack_require__(47);
-	var latestStyleSpec = __webpack_require__(63);
-	var validateGlyphsURL = __webpack_require__(65);
+	var validateConstants = __webpack_require__(47);
+	var validate = __webpack_require__(50);
+	var latestStyleSpec = __webpack_require__(66);
+	var validateGlyphsURL = __webpack_require__(68);
 	
 	/**
 	 * Validate a Mapbox GL style against the style specification. This entrypoint,
@@ -16223,11 +16340,11 @@
 	    return sortErrors(errors);
 	}
 	
-	validateStyleMin.source = wrapCleanErrors(__webpack_require__(61));
-	validateStyleMin.layer = wrapCleanErrors(__webpack_require__(58));
-	validateStyleMin.filter = wrapCleanErrors(__webpack_require__(57));
-	validateStyleMin.paintProperty = wrapCleanErrors(__webpack_require__(59));
-	validateStyleMin.layoutProperty = wrapCleanErrors(__webpack_require__(60));
+	validateStyleMin.source = wrapCleanErrors(__webpack_require__(64));
+	validateStyleMin.layer = wrapCleanErrors(__webpack_require__(61));
+	validateStyleMin.filter = wrapCleanErrors(__webpack_require__(60));
+	validateStyleMin.paintProperty = wrapCleanErrors(__webpack_require__(62));
+	validateStyleMin.layoutProperty = wrapCleanErrors(__webpack_require__(63));
 	
 	function sortErrors(errors) {
 	    return [].concat(errors).sort(function (a, b) {
@@ -16245,13 +16362,13 @@
 
 
 /***/ },
-/* 44 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var getType = __webpack_require__(46);
+	var ValidationError = __webpack_require__(48);
+	var getType = __webpack_require__(49);
 	
 	module.exports = function validateConstants(options) {
 	    var key = options.key;
@@ -16283,12 +16400,12 @@
 
 
 /***/ },
-/* 45 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var format = __webpack_require__(14).format;
+	var format = __webpack_require__(15).format;
 	
 	function ValidationError(key, value /*, message, ...*/) {
 	    this.message = (
@@ -16305,7 +16422,7 @@
 
 
 /***/ },
-/* 46 */
+/* 49 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16328,14 +16445,14 @@
 
 
 /***/ },
-/* 47 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var getType = __webpack_require__(46);
-	var extend = __webpack_require__(48);
+	var ValidationError = __webpack_require__(48);
+	var getType = __webpack_require__(49);
+	var extend = __webpack_require__(51);
 	
 	// Main recursive validation function. Tracks:
 	//
@@ -16348,24 +16465,24 @@
 	
 	module.exports = function validate(options) {
 	
-	    var validateFunction = __webpack_require__(49);
-	    var validateObject = __webpack_require__(50);
+	    var validateFunction = __webpack_require__(52);
+	    var validateObject = __webpack_require__(53);
 	    var VALIDATORS = {
 	        '*': function() {
 	            return [];
 	        },
-	        'array': __webpack_require__(51),
-	        'boolean': __webpack_require__(53),
-	        'number': __webpack_require__(52),
-	        'color': __webpack_require__(54),
-	        'constants': __webpack_require__(44),
-	        'enum': __webpack_require__(55),
-	        'filter': __webpack_require__(57),
-	        'function': __webpack_require__(49),
-	        'layer': __webpack_require__(58),
-	        'object': __webpack_require__(50),
-	        'source': __webpack_require__(61),
-	        'string': __webpack_require__(62)
+	        'array': __webpack_require__(54),
+	        'boolean': __webpack_require__(56),
+	        'number': __webpack_require__(55),
+	        'color': __webpack_require__(57),
+	        'constants': __webpack_require__(47),
+	        'enum': __webpack_require__(58),
+	        'filter': __webpack_require__(60),
+	        'function': __webpack_require__(52),
+	        'layer': __webpack_require__(61),
+	        'object': __webpack_require__(53),
+	        'source': __webpack_require__(64),
+	        'string': __webpack_require__(65)
 	    };
 	
 	    var value = options.value;
@@ -16399,7 +16516,7 @@
 
 
 /***/ },
-/* 48 */
+/* 51 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16416,17 +16533,17 @@
 
 
 /***/ },
-/* 49 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var getType = __webpack_require__(46);
-	var validate = __webpack_require__(47);
-	var validateObject = __webpack_require__(50);
-	var validateArray = __webpack_require__(51);
-	var validateNumber = __webpack_require__(52);
+	var ValidationError = __webpack_require__(48);
+	var getType = __webpack_require__(49);
+	var validate = __webpack_require__(50);
+	var validateObject = __webpack_require__(53);
+	var validateArray = __webpack_require__(54);
+	var validateNumber = __webpack_require__(55);
 	
 	module.exports = function validateFunction(options) {
 	    var originalValueSpec = options.valueSpec;
@@ -16544,14 +16661,14 @@
 
 
 /***/ },
-/* 50 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var getType = __webpack_require__(46);
-	var validate = __webpack_require__(47);
+	var ValidationError = __webpack_require__(48);
+	var getType = __webpack_require__(49);
+	var validate = __webpack_require__(50);
 	
 	module.exports = function validateObject(options) {
 	    var key = options.key;
@@ -16601,14 +16718,14 @@
 
 
 /***/ },
-/* 51 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var getType = __webpack_require__(46);
-	var validate = __webpack_require__(47);
-	var ValidationError = __webpack_require__(45);
+	var getType = __webpack_require__(49);
+	var validate = __webpack_require__(50);
+	var ValidationError = __webpack_require__(48);
 	
 	module.exports = function validateArray(options) {
 	    var array = options.value;
@@ -16659,13 +16776,13 @@
 
 
 /***/ },
-/* 52 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var getType = __webpack_require__(46);
-	var ValidationError = __webpack_require__(45);
+	var getType = __webpack_require__(49);
+	var ValidationError = __webpack_require__(48);
 	
 	module.exports = function validateNumber(options) {
 	    var key = options.key;
@@ -16690,13 +16807,13 @@
 
 
 /***/ },
-/* 53 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var getType = __webpack_require__(46);
-	var ValidationError = __webpack_require__(45);
+	var getType = __webpack_require__(49);
+	var ValidationError = __webpack_require__(48);
 	
 	module.exports = function validateBoolean(options) {
 	    var value = options.value;
@@ -16712,14 +16829,14 @@
 
 
 /***/ },
-/* 54 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var getType = __webpack_require__(46);
-	var parseCSSColor = __webpack_require__(38).parseCSSColor;
+	var ValidationError = __webpack_require__(48);
+	var getType = __webpack_require__(49);
+	var parseCSSColor = __webpack_require__(41).parseCSSColor;
 	
 	module.exports = function validateColor(options) {
 	    var key = options.key;
@@ -16739,13 +16856,13 @@
 
 
 /***/ },
-/* 55 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var unbundle = __webpack_require__(56);
+	var ValidationError = __webpack_require__(48);
+	var unbundle = __webpack_require__(59);
 	
 	module.exports = function validateEnum(options) {
 	    var key = options.key;
@@ -16761,7 +16878,7 @@
 
 
 /***/ },
-/* 56 */
+/* 59 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16777,15 +16894,15 @@
 
 
 /***/ },
-/* 57 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var validateEnum = __webpack_require__(55);
-	var getType = __webpack_require__(46);
-	var unbundle = __webpack_require__(56);
+	var ValidationError = __webpack_require__(48);
+	var validateEnum = __webpack_require__(58);
+	var getType = __webpack_require__(49);
+	var unbundle = __webpack_require__(59);
 	
 	module.exports = function validateFilter(options) {
 	    var value = options.value;
@@ -16886,18 +17003,18 @@
 
 
 /***/ },
-/* 58 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var unbundle = __webpack_require__(56);
-	var validateObject = __webpack_require__(50);
-	var validateFilter = __webpack_require__(57);
-	var validatePaintProperty = __webpack_require__(59);
-	var validateLayoutProperty = __webpack_require__(60);
-	var extend = __webpack_require__(48);
+	var ValidationError = __webpack_require__(48);
+	var unbundle = __webpack_require__(59);
+	var validateObject = __webpack_require__(53);
+	var validateFilter = __webpack_require__(60);
+	var validatePaintProperty = __webpack_require__(62);
+	var validateLayoutProperty = __webpack_require__(63);
+	var extend = __webpack_require__(51);
 	
 	module.exports = function validateLayer(options) {
 	    var errors = [];
@@ -17003,13 +17120,13 @@
 
 
 /***/ },
-/* 59 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var validate = __webpack_require__(47);
-	var ValidationError = __webpack_require__(45);
+	var validate = __webpack_require__(50);
+	var ValidationError = __webpack_require__(48);
 	
 	module.exports = function validatePaintProperty(options) {
 	    var key = options.key;
@@ -17047,13 +17164,13 @@
 
 
 /***/ },
-/* 60 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var validate = __webpack_require__(47);
-	var ValidationError = __webpack_require__(45);
+	var validate = __webpack_require__(50);
+	var ValidationError = __webpack_require__(48);
 	
 	module.exports = function validateLayoutProperty(options) {
 	    var key = options.key;
@@ -17090,15 +17207,15 @@
 
 
 /***/ },
-/* 61 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var unbundle = __webpack_require__(56);
-	var validateObject = __webpack_require__(50);
-	var validateEnum = __webpack_require__(55);
+	var ValidationError = __webpack_require__(48);
+	var unbundle = __webpack_require__(59);
+	var validateObject = __webpack_require__(53);
+	var validateEnum = __webpack_require__(58);
 	
 	module.exports = function validateSource(options) {
 	    var value = options.value;
@@ -17171,13 +17288,13 @@
 
 
 /***/ },
-/* 62 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var getType = __webpack_require__(46);
-	var ValidationError = __webpack_require__(45);
+	var getType = __webpack_require__(49);
+	var ValidationError = __webpack_require__(48);
 	
 	module.exports = function validateString(options) {
 	    var value = options.value;
@@ -17193,14 +17310,14 @@
 
 
 /***/ },
-/* 63 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(64);
+	module.exports = __webpack_require__(67);
 
 
 /***/ },
-/* 64 */
+/* 67 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -18433,13 +18550,13 @@
 	};
 
 /***/ },
-/* 65 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ValidationError = __webpack_require__(45);
-	var validateString = __webpack_require__(62);
+	var ValidationError = __webpack_require__(48);
+	var validateString = __webpack_require__(65);
 	
 	module.exports = function(options) {
 	    var value = options.value;
@@ -18461,13 +18578,13 @@
 
 
 /***/ },
-/* 66 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleLayer = __webpack_require__(31);
+	var util = __webpack_require__(25);
+	var StyleLayer = __webpack_require__(34);
 	
 	function BackgroundStyleLayer() {
 	    StyleLayer.apply(this, arguments);
@@ -18479,13 +18596,13 @@
 
 
 /***/ },
-/* 67 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleLayer = __webpack_require__(31);
+	var util = __webpack_require__(25);
+	var StyleLayer = __webpack_require__(34);
 	
 	function CircleStyleLayer() {
 	    StyleLayer.apply(this, arguments);
@@ -18497,13 +18614,13 @@
 
 
 /***/ },
-/* 68 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleLayer = __webpack_require__(31);
+	var util = __webpack_require__(25);
+	var StyleLayer = __webpack_require__(34);
 	
 	function FillStyleLayer() {
 	    StyleLayer.apply(this, arguments);
@@ -18515,13 +18632,13 @@
 
 
 /***/ },
-/* 69 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleLayer = __webpack_require__(31);
+	var util = __webpack_require__(25);
+	var StyleLayer = __webpack_require__(34);
 	
 	function LineStyleLayer() {
 	    StyleLayer.apply(this, arguments);
@@ -18553,13 +18670,13 @@
 
 
 /***/ },
-/* 70 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleLayer = __webpack_require__(31);
+	var util = __webpack_require__(25);
+	var StyleLayer = __webpack_require__(34);
 	
 	function RasterStyleLayer() {
 	    StyleLayer.apply(this, arguments);
@@ -18571,13 +18688,13 @@
 
 
 /***/ },
-/* 71 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StyleLayer = __webpack_require__(31);
+	var util = __webpack_require__(25);
+	var StyleLayer = __webpack_require__(34);
 	
 	function SymbolStyleLayer() {
 	    StyleLayer.apply(this, arguments);
@@ -18615,15 +18732,15 @@
 
 
 /***/ },
-/* 72 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Evented = __webpack_require__(27);
-	var ajax = __webpack_require__(73);
-	var browser = __webpack_require__(26);
-	var normalizeURL = __webpack_require__(74).normalizeSpriteURL;
+	var Evented = __webpack_require__(30);
+	var ajax = __webpack_require__(76);
+	var browser = __webpack_require__(29);
+	var normalizeURL = __webpack_require__(77).normalizeSpriteURL;
 	
 	module.exports = ImageSprite;
 	
@@ -18700,7 +18817,7 @@
 
 
 /***/ },
-/* 73 */
+/* 76 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -18794,13 +18911,13 @@
 
 
 /***/ },
-/* 74 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var config = __webpack_require__(75);
-	var browser = __webpack_require__(26);
+	var config = __webpack_require__(78);
+	var browser = __webpack_require__(29);
 	
 	function normalizeURL(url, pathPrefix, accessToken) {
 	    accessToken = accessToken || config.ACCESS_TOKEN;
@@ -18879,7 +18996,7 @@
 
 
 /***/ },
-/* 75 */
+/* 78 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -18891,16 +19008,16 @@
 
 
 /***/ },
-/* 76 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var normalizeURL = __webpack_require__(74).normalizeGlyphsURL;
-	var getArrayBuffer = __webpack_require__(73).getArrayBuffer;
-	var Glyphs = __webpack_require__(77);
-	var GlyphAtlas = __webpack_require__(78);
-	var Protobuf = __webpack_require__(80);
+	var normalizeURL = __webpack_require__(77).normalizeGlyphsURL;
+	var getArrayBuffer = __webpack_require__(76).getArrayBuffer;
+	var Glyphs = __webpack_require__(80);
+	var GlyphAtlas = __webpack_require__(81);
+	var Protobuf = __webpack_require__(83);
 	
 	module.exports = GlyphSource;
 	
@@ -19037,7 +19154,7 @@
 
 
 /***/ },
-/* 77 */
+/* 80 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19076,12 +19193,12 @@
 
 
 /***/ },
-/* 78 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ShelfPack = __webpack_require__(79);
+	var ShelfPack = __webpack_require__(82);
 	
 	module.exports = GlyphAtlas;
 	function GlyphAtlas(width, height) {
@@ -19248,7 +19365,7 @@
 
 
 /***/ },
-/* 79 */
+/* 82 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19495,14 +19612,14 @@
 
 
 /***/ },
-/* 80 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
 	
 	module.exports = Pbf;
 	
-	var Buffer = global.Buffer || __webpack_require__(81);
+	var Buffer = global.Buffer || __webpack_require__(84);
 	
 	function Pbf(buf) {
 	    this.buf = !Buffer.isBuffer(buf) ? new Buffer(buf || 0) : buf;
@@ -19928,7 +20045,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 81 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
@@ -19938,7 +20055,7 @@
 	
 	module.exports = Buffer;
 	
-	var ieee754 = __webpack_require__(86);
+	var ieee754 = __webpack_require__(89);
 	
 	var BufferMethods;
 	
@@ -20091,10 +20208,10 @@
 	    return bytes;
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(82).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(85).Buffer))
 
 /***/ },
-/* 82 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer, global) {/*!
@@ -20107,9 +20224,9 @@
 	
 	'use strict'
 	
-	var base64 = __webpack_require__(83)
-	var ieee754 = __webpack_require__(84)
-	var isArray = __webpack_require__(85)
+	var base64 = __webpack_require__(86)
+	var ieee754 = __webpack_require__(87)
+	var isArray = __webpack_require__(88)
 	
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -21646,10 +21763,10 @@
 	  return i
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(82).Buffer, (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(85).Buffer, (function() { return this; }())))
 
 /***/ },
-/* 83 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
@@ -21779,7 +21896,7 @@
 
 
 /***/ },
-/* 84 */
+/* 87 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -21869,7 +21986,7 @@
 
 
 /***/ },
-/* 85 */
+/* 88 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -21880,7 +21997,7 @@
 
 
 /***/ },
-/* 86 */
+/* 89 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -21970,13 +22087,13 @@
 
 
 /***/ },
-/* 87 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var ShelfPack = __webpack_require__(79);
-	var browser = __webpack_require__(26);
+	var ShelfPack = __webpack_require__(82);
+	var browser = __webpack_require__(29);
 	
 	module.exports = SpriteAtlas;
 	function SpriteAtlas(width, height) {
@@ -22206,7 +22323,7 @@
 
 
 /***/ },
-/* 88 */
+/* 91 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22355,13 +22472,13 @@
 
 
 /***/ },
-/* 89 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Actor = __webpack_require__(90);
-	var WebWorkify = __webpack_require__(91);
+	var Actor = __webpack_require__(93);
+	var WebWorkify = __webpack_require__(94);
 	
 	module.exports = Dispatcher;
 	
@@ -22369,7 +22486,7 @@
 	    this.actors = [];
 	    this.currentActor = 0;
 	    for (var i = 0; i < length; i++) {
-	        var worker = new WebWorkify(__webpack_require__(92));
+	        var worker = new WebWorkify(__webpack_require__(95));
 	        var actor = new Actor(worker, parent);
 	        actor.name = "Worker " + i;
 	        this.actors.push(actor);
@@ -22403,7 +22520,7 @@
 
 
 /***/ },
-/* 90 */
+/* 93 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -22472,7 +22589,7 @@
 
 
 /***/ },
-/* 91 */
+/* 94 */
 /***/ function(module, exports) {
 
 	var __webpack_require__ = arguments[2];
@@ -22541,24 +22658,24 @@
 
 
 /***/ },
-/* 92 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Actor = __webpack_require__(90);
-	var WorkerTile = __webpack_require__(93);
-	var StyleLayer = __webpack_require__(31);
-	var util = __webpack_require__(22);
-	var ajax = __webpack_require__(73);
-	var vt = __webpack_require__(122);
-	var Protobuf = __webpack_require__(80);
-	var supercluster = __webpack_require__(130);
+	var Actor = __webpack_require__(93);
+	var WorkerTile = __webpack_require__(96);
+	var StyleLayer = __webpack_require__(34);
+	var util = __webpack_require__(25);
+	var ajax = __webpack_require__(76);
+	var vt = __webpack_require__(125);
+	var Protobuf = __webpack_require__(83);
+	var supercluster = __webpack_require__(133);
 	
-	var geojsonvt = __webpack_require__(135);
-	var rewind = __webpack_require__(142);
-	var GeoJSONWrapper = __webpack_require__(145);
-	var vtpbf = __webpack_require__(146);
+	var geojsonvt = __webpack_require__(138);
+	var rewind = __webpack_require__(145);
+	var GeoJSONWrapper = __webpack_require__(148);
+	var vtpbf = __webpack_require__(149);
 	
 	module.exports = function(self) {
 	    return new Worker(self);
@@ -22790,16 +22907,16 @@
 
 
 /***/ },
-/* 93 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var FeatureIndex = __webpack_require__(94);
-	var CollisionTile = __webpack_require__(128);
-	var Bucket = __webpack_require__(96);
-	var CollisionBoxArray = __webpack_require__(129);
-	var DictionaryCoder = __webpack_require__(121);
+	var FeatureIndex = __webpack_require__(97);
+	var CollisionTile = __webpack_require__(131);
+	var Bucket = __webpack_require__(99);
+	var CollisionBoxArray = __webpack_require__(132);
+	var DictionaryCoder = __webpack_require__(124);
 	
 	module.exports = WorkerTile;
 	
@@ -23083,24 +23200,24 @@
 
 
 /***/ },
-/* 94 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
-	var loadGeometry = __webpack_require__(95);
-	var EXTENT = __webpack_require__(96).EXTENT;
-	var featureFilter = __webpack_require__(97);
-	var StructArrayType = __webpack_require__(104);
-	var Grid = __webpack_require__(120);
-	var DictionaryCoder = __webpack_require__(121);
-	var vt = __webpack_require__(122);
-	var Protobuf = __webpack_require__(80);
-	var GeoJSONFeature = __webpack_require__(126);
-	var arraysIntersect = __webpack_require__(22).arraysIntersect;
+	var Point = __webpack_require__(32);
+	var loadGeometry = __webpack_require__(98);
+	var EXTENT = __webpack_require__(99).EXTENT;
+	var featureFilter = __webpack_require__(100);
+	var StructArrayType = __webpack_require__(107);
+	var Grid = __webpack_require__(123);
+	var DictionaryCoder = __webpack_require__(124);
+	var vt = __webpack_require__(125);
+	var Protobuf = __webpack_require__(83);
+	var GeoJSONFeature = __webpack_require__(129);
+	var arraysIntersect = __webpack_require__(25).arraysIntersect;
 	
-	var intersection = __webpack_require__(127);
+	var intersection = __webpack_require__(130);
 	var multiPolygonIntersectsBufferedMultiPoint = intersection.multiPolygonIntersectsBufferedMultiPoint;
 	var multiPolygonIntersectsMultiPolygon = intersection.multiPolygonIntersectsMultiPolygon;
 	var multiPolygonIntersectsBufferedMultiLine = intersection.multiPolygonIntersectsBufferedMultiLine;
@@ -23388,12 +23505,12 @@
 
 
 /***/ },
-/* 95 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var EXTENT = __webpack_require__(96).EXTENT;
+	var EXTENT = __webpack_require__(99).EXTENT;
 	var EXTENT_MIN = EXTENT * -2;
 	var EXTENT_MAX = (EXTENT * 2) - 1;
 	
@@ -23431,16 +23548,16 @@
 
 
 /***/ },
-/* 96 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var featureFilter = __webpack_require__(97);
-	var Buffer = __webpack_require__(98);
-	var util = __webpack_require__(22);
-	var StructArrayType = __webpack_require__(104);
-	var VertexArrayObject = __webpack_require__(105);
+	var featureFilter = __webpack_require__(100);
+	var Buffer = __webpack_require__(101);
+	var util = __webpack_require__(25);
+	var StructArrayType = __webpack_require__(107);
+	var VertexArrayObject = __webpack_require__(108);
 	
 	module.exports = Bucket;
 	
@@ -23452,10 +23569,10 @@
 	 */
 	Bucket.create = function(options) {
 	    var Classes = {
-	        fill: __webpack_require__(106),
-	        line: __webpack_require__(107),
-	        circle: __webpack_require__(108),
-	        symbol: __webpack_require__(109)
+	        fill: __webpack_require__(109),
+	        line: __webpack_require__(110),
+	        circle: __webpack_require__(111),
+	        symbol: __webpack_require__(112)
 	    };
 	    return new Classes[options.layer.type](options);
 	};
@@ -23869,7 +23986,7 @@
 
 
 /***/ },
-/* 97 */
+/* 100 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23955,12 +24072,12 @@
 
 
 /***/ },
-/* 98 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 	
-	var assert = __webpack_require__(99);
+	var assert = __webpack_require__(102);
 	
 	module.exports = Buffer;
 	
@@ -24075,10 +24192,10 @@
 	 */
 	Buffer.VERTEX_ATTRIBUTE_ALIGNMENT = 4;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(82).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(85).Buffer))
 
 /***/ },
-/* 99 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
@@ -24108,7 +24225,7 @@
 	// when used in node, this will actually load the util module we depend on
 	// versus loading the builtin util module as happens otherwise
 	// this is a bug in node module loading as far as I am concerned
-	var util = __webpack_require__(100);
+	var util = __webpack_require__(103);
 	
 	var pSlice = Array.prototype.slice;
 	var hasOwn = Object.prototype.hasOwnProperty;
@@ -24443,7 +24560,7 @@
 
 
 /***/ },
-/* 100 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -24971,7 +25088,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 	
-	exports.isBuffer = __webpack_require__(102);
+	exports.isBuffer = __webpack_require__(105);
 	
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -25015,7 +25132,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(103);
+	exports.inherits = __webpack_require__(106);
 	
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -25033,10 +25150,10 @@
 	  return Object.prototype.hasOwnProperty.call(obj, prop);
 	}
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(101)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(104)))
 
 /***/ },
-/* 101 */
+/* 104 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -25133,7 +25250,7 @@
 
 
 /***/ },
-/* 102 */
+/* 105 */
 /***/ function(module, exports) {
 
 	module.exports = function isBuffer(arg) {
@@ -25144,7 +25261,7 @@
 	}
 
 /***/ },
-/* 103 */
+/* 106 */
 /***/ function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -25173,14 +25290,14 @@
 
 
 /***/ },
-/* 104 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	// Note: all "sizes" are measured in bytes
 	
-	var assert = __webpack_require__(99);
+	var assert = __webpack_require__(102);
 	
 	module.exports = StructArrayType;
 	
@@ -25500,12 +25617,12 @@
 
 
 /***/ },
-/* 105 */
+/* 108 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var assert = __webpack_require__(99);
+	var assert = __webpack_require__(102);
 	
 	module.exports = VertexArrayObject;
 	
@@ -25600,14 +25717,14 @@
 
 
 /***/ },
-/* 106 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Bucket = __webpack_require__(96);
-	var util = __webpack_require__(22);
-	var loadGeometry = __webpack_require__(95);
+	var Bucket = __webpack_require__(99);
+	var util = __webpack_require__(25);
+	var loadGeometry = __webpack_require__(98);
 	
 	module.exports = FillBucket;
 	
@@ -25680,14 +25797,14 @@
 
 
 /***/ },
-/* 107 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Bucket = __webpack_require__(96);
-	var util = __webpack_require__(22);
-	var loadGeometry = __webpack_require__(95);
+	var Bucket = __webpack_require__(99);
+	var util = __webpack_require__(25);
+	var loadGeometry = __webpack_require__(98);
 	var EXTENT = Bucket.EXTENT;
 	
 	// NOTE ON EXTRUDE SCALE:
@@ -26117,14 +26234,14 @@
 
 
 /***/ },
-/* 108 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Bucket = __webpack_require__(96);
-	var util = __webpack_require__(22);
-	var loadGeometry = __webpack_require__(95);
+	var Bucket = __webpack_require__(99);
+	var util = __webpack_require__(25);
+	var loadGeometry = __webpack_require__(98);
 	var EXTENT = Bucket.EXTENT;
 	
 	module.exports = CircleBucket;
@@ -26224,25 +26341,25 @@
 
 
 /***/ },
-/* 109 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
+	var Point = __webpack_require__(32);
 	
-	var Bucket = __webpack_require__(96);
-	var Anchor = __webpack_require__(110);
-	var getAnchors = __webpack_require__(111);
-	var resolveTokens = __webpack_require__(113);
-	var Quads = __webpack_require__(114);
-	var Shaping = __webpack_require__(115);
-	var resolveText = __webpack_require__(116);
-	var mergeLines = __webpack_require__(117);
-	var clipLine = __webpack_require__(118);
-	var util = __webpack_require__(22);
-	var loadGeometry = __webpack_require__(95);
-	var CollisionFeature = __webpack_require__(119);
+	var Bucket = __webpack_require__(99);
+	var Anchor = __webpack_require__(113);
+	var getAnchors = __webpack_require__(114);
+	var resolveTokens = __webpack_require__(116);
+	var Quads = __webpack_require__(117);
+	var Shaping = __webpack_require__(118);
+	var resolveText = __webpack_require__(119);
+	var mergeLines = __webpack_require__(120);
+	var clipLine = __webpack_require__(121);
+	var util = __webpack_require__(25);
+	var loadGeometry = __webpack_require__(98);
+	var CollisionFeature = __webpack_require__(122);
 	
 	var shapeText = Shaping.shapeText;
 	var shapeIcon = Shaping.shapeIcon;
@@ -26790,12 +26907,12 @@
 
 
 /***/ },
-/* 110 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
+	var Point = __webpack_require__(32);
 	
 	module.exports = Anchor;
 	
@@ -26817,14 +26934,14 @@
 
 
 /***/ },
-/* 111 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var interpolate = __webpack_require__(33);
-	var Anchor = __webpack_require__(110);
-	var checkMaxAngle = __webpack_require__(112);
+	var interpolate = __webpack_require__(36);
+	var Anchor = __webpack_require__(113);
+	var checkMaxAngle = __webpack_require__(115);
 	
 	module.exports = getAnchors;
 	
@@ -26925,7 +27042,7 @@
 
 
 /***/ },
-/* 112 */
+/* 115 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27009,7 +27126,7 @@
 
 
 /***/ },
-/* 113 */
+/* 116 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27032,12 +27149,12 @@
 
 
 /***/ },
-/* 114 */
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
+	var Point = __webpack_require__(32);
 	
 	module.exports = {
 	    getIconQuads: getIconQuads,
@@ -27289,7 +27406,7 @@
 
 
 /***/ },
-/* 115 */
+/* 118 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27474,12 +27591,12 @@
 
 
 /***/ },
-/* 116 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var resolveTokens = __webpack_require__(113);
+	var resolveTokens = __webpack_require__(116);
 	
 	module.exports = resolveText;
 	
@@ -27521,7 +27638,7 @@
 
 
 /***/ },
-/* 117 */
+/* 120 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27616,12 +27733,12 @@
 
 
 /***/ },
-/* 118 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
+	var Point = __webpack_require__(32);
 	
 	module.exports = clipLine;
 	
@@ -27694,7 +27811,7 @@
 
 
 /***/ },
-/* 119 */
+/* 122 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27832,7 +27949,7 @@
 
 
 /***/ },
-/* 120 */
+/* 123 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -27995,12 +28112,12 @@
 
 
 /***/ },
-/* 121 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var assert = __webpack_require__(99);
+	var assert = __webpack_require__(102);
 	
 	module.exports = DictionaryCoder;
 	
@@ -28026,21 +28143,21 @@
 
 
 /***/ },
-/* 122 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports.VectorTile = __webpack_require__(123);
-	module.exports.VectorTileFeature = __webpack_require__(125);
-	module.exports.VectorTileLayer = __webpack_require__(124);
+	module.exports.VectorTile = __webpack_require__(126);
+	module.exports.VectorTileFeature = __webpack_require__(128);
+	module.exports.VectorTileLayer = __webpack_require__(127);
 
 
 /***/ },
-/* 123 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var VectorTileLayer = __webpack_require__(124);
+	var VectorTileLayer = __webpack_require__(127);
 	
 	module.exports = VectorTile;
 	
@@ -28058,12 +28175,12 @@
 
 
 /***/ },
-/* 124 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var VectorTileFeature = __webpack_require__(125);
+	var VectorTileFeature = __webpack_require__(128);
 	
 	module.exports = VectorTileLayer;
 	
@@ -28125,12 +28242,12 @@
 
 
 /***/ },
-/* 125 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
+	var Point = __webpack_require__(32);
 	
 	module.exports = VectorTileFeature;
 	
@@ -28303,12 +28420,12 @@
 
 
 /***/ },
-/* 126 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var VectorTileFeature = __webpack_require__(122).VectorTileFeature;
+	var VectorTileFeature = __webpack_require__(125).VectorTileFeature;
 	
 	module.exports = Feature;
 	
@@ -28393,7 +28510,7 @@
 
 
 /***/ },
-/* 127 */
+/* 130 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -28563,14 +28680,14 @@
 
 
 /***/ },
-/* 128 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
-	var EXTENT = __webpack_require__(96).EXTENT;
-	var Grid = __webpack_require__(120);
+	var Point = __webpack_require__(32);
+	var EXTENT = __webpack_require__(99).EXTENT;
+	var Grid = __webpack_require__(123);
 	
 	module.exports = CollisionTile;
 	
@@ -28868,14 +28985,14 @@
 
 
 /***/ },
-/* 129 */
+/* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var StructArrayType = __webpack_require__(104);
-	var util = __webpack_require__(22);
-	var Point = __webpack_require__(29);
+	var StructArrayType = __webpack_require__(107);
+	var util = __webpack_require__(25);
+	var Point = __webpack_require__(32);
 	
 	/**
 	 * A collision box represents an area of the map that that is covered by a
@@ -28953,12 +29070,12 @@
 
 
 /***/ },
-/* 130 */
+/* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var kdbush = __webpack_require__(131);
+	var kdbush = __webpack_require__(134);
 	
 	module.exports = supercluster;
 	
@@ -29172,14 +29289,14 @@
 
 
 /***/ },
-/* 131 */
+/* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var sort = __webpack_require__(132);
-	var range = __webpack_require__(133);
-	var within = __webpack_require__(134);
+	var sort = __webpack_require__(135);
+	var range = __webpack_require__(136);
+	var within = __webpack_require__(137);
 	
 	module.exports = kdbush;
 	
@@ -29222,7 +29339,7 @@
 
 
 /***/ },
-/* 132 */
+/* 135 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29294,7 +29411,7 @@
 
 
 /***/ },
-/* 133 */
+/* 136 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29346,7 +29463,7 @@
 
 
 /***/ },
-/* 134 */
+/* 137 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29402,18 +29519,18 @@
 
 
 /***/ },
-/* 135 */
+/* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = geojsonvt;
 	
-	var convert = __webpack_require__(136),     // GeoJSON conversion and preprocessing
-	    transform = __webpack_require__(138), // coordinate transformation
-	    clip = __webpack_require__(139),           // stripe clipping algorithm
-	    wrap = __webpack_require__(140),           // date line processing
-	    createTile = __webpack_require__(141);     // final simplified tile generation
+	var convert = __webpack_require__(139),     // GeoJSON conversion and preprocessing
+	    transform = __webpack_require__(141), // coordinate transformation
+	    clip = __webpack_require__(142),           // stripe clipping algorithm
+	    wrap = __webpack_require__(143),           // date line processing
+	    createTile = __webpack_require__(144);     // final simplified tile generation
 	
 	
 	function geojsonvt(data, options) {
@@ -29648,14 +29765,14 @@
 
 
 /***/ },
-/* 136 */
+/* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = convert;
 	
-	var simplify = __webpack_require__(137);
+	var simplify = __webpack_require__(140);
 	
 	// converts GeoJSON feature into an intermediate projected JSON vector format with simplification data
 	
@@ -29798,7 +29915,7 @@
 
 
 /***/ },
-/* 137 */
+/* 140 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29878,7 +29995,7 @@
 
 
 /***/ },
-/* 138 */
+/* 141 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29925,7 +30042,7 @@
 
 
 /***/ },
-/* 139 */
+/* 142 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30082,12 +30199,12 @@
 
 
 /***/ },
-/* 140 */
+/* 143 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var clip = __webpack_require__(139);
+	var clip = __webpack_require__(142);
 	
 	module.exports = wrap;
 	
@@ -30149,7 +30266,7 @@
 
 
 /***/ },
-/* 141 */
+/* 144 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30240,10 +30357,10 @@
 
 
 /***/ },
-/* 142 */
+/* 145 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var geojsonArea = __webpack_require__(143);
+	var geojsonArea = __webpack_require__(146);
 	
 	module.exports = rewind;
 	
@@ -30295,10 +30412,10 @@
 
 
 /***/ },
-/* 143 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var wgs84 = __webpack_require__(144);
+	var wgs84 = __webpack_require__(147);
 	
 	module.exports.geometry = geometry;
 	module.exports.ring = ringArea;
@@ -30365,7 +30482,7 @@
 
 
 /***/ },
-/* 144 */
+/* 147 */
 /***/ function(module, exports) {
 
 	module.exports.RADIUS = 6378137;
@@ -30374,14 +30491,14 @@
 
 
 /***/ },
-/* 145 */
+/* 148 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Point = __webpack_require__(29);
-	var VectorTileFeature = __webpack_require__(122).VectorTileFeature;
-	var EXTENT = __webpack_require__(96).EXTENT;
+	var Point = __webpack_require__(32);
+	var VectorTileFeature = __webpack_require__(125).VectorTileFeature;
+	var EXTENT = __webpack_require__(99).EXTENT;
 	
 	module.exports = GeoJSONWrapper;
 	
@@ -30447,12 +30564,12 @@
 
 
 /***/ },
-/* 146 */
+/* 149 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Pbf = __webpack_require__(80)
-	var vtpb = __webpack_require__(147)
-	var GeoJSONWrapper = __webpack_require__(148)
+	var Pbf = __webpack_require__(83)
+	var vtpb = __webpack_require__(150)
+	var GeoJSONWrapper = __webpack_require__(151)
 	
 	module.exports = fromVectorTileJs
 	module.exports.fromVectorTileJs = fromVectorTileJs
@@ -30606,7 +30723,7 @@
 
 
 /***/ },
-/* 147 */
+/* 150 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30716,13 +30833,13 @@
 
 
 /***/ },
-/* 148 */
+/* 151 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict'
 	
-	var Point = __webpack_require__(29)
-	var VectorTileFeature = __webpack_require__(122).VectorTileFeature
+	var Point = __webpack_require__(32)
+	var VectorTileFeature = __webpack_require__(125).VectorTileFeature
 	
 	module.exports = GeoJSONWrapper
 	
@@ -30787,7 +30904,7 @@
 
 
 /***/ },
-/* 149 */
+/* 152 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30823,17 +30940,17 @@
 
 
 /***/ },
-/* 150 */
+/* 153 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var ajax = __webpack_require__(73);
-	var browser = __webpack_require__(26);
-	var TilePyramid = __webpack_require__(151);
-	var normalizeURL = __webpack_require__(74).normalizeSourceURL;
-	var TileCoord = __webpack_require__(153);
+	var util = __webpack_require__(25);
+	var ajax = __webpack_require__(76);
+	var browser = __webpack_require__(29);
+	var TilePyramid = __webpack_require__(154);
+	var normalizeURL = __webpack_require__(77).normalizeSourceURL;
+	var TileCoord = __webpack_require__(156);
 	
 	exports._loadTileJSON = function(options) {
 	    var loaded = function(err, tileJSON) {
@@ -30991,11 +31108,11 @@
 	exports.create = function(source) {
 	    // This is not at file scope in order to avoid a circular require.
 	    var sources = {
-	        vector: __webpack_require__(155),
-	        raster: __webpack_require__(156),
-	        geojson: __webpack_require__(157),
-	        video: __webpack_require__(159),
-	        image: __webpack_require__(162)
+	        vector: __webpack_require__(158),
+	        raster: __webpack_require__(159),
+	        geojson: __webpack_require__(160),
+	        video: __webpack_require__(162),
+	        image: __webpack_require__(165)
 	    };
 	
 	    return exports.is(source) ? source : new sources[source.type](source);
@@ -31004,11 +31121,11 @@
 	exports.is = function(source) {
 	    // This is not at file scope in order to avoid a circular require.
 	    var sources = {
-	        vector: __webpack_require__(155),
-	        raster: __webpack_require__(156),
-	        geojson: __webpack_require__(157),
-	        video: __webpack_require__(159),
-	        image: __webpack_require__(162)
+	        vector: __webpack_require__(158),
+	        raster: __webpack_require__(159),
+	        geojson: __webpack_require__(160),
+	        video: __webpack_require__(162),
+	        image: __webpack_require__(165)
 	    };
 	
 	    for (var type in sources) {
@@ -31022,18 +31139,18 @@
 
 
 /***/ },
-/* 151 */
+/* 154 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Tile = __webpack_require__(152);
-	var TileCoord = __webpack_require__(153);
-	var Point = __webpack_require__(29);
-	var Cache = __webpack_require__(154);
-	var Coordinate = __webpack_require__(24);
-	var util = __webpack_require__(22);
-	var EXTENT = __webpack_require__(96).EXTENT;
+	var Tile = __webpack_require__(155);
+	var TileCoord = __webpack_require__(156);
+	var Point = __webpack_require__(32);
+	var Cache = __webpack_require__(157);
+	var Coordinate = __webpack_require__(27);
+	var util = __webpack_require__(25);
+	var EXTENT = __webpack_require__(99).EXTENT;
 	
 	module.exports = TilePyramid;
 	
@@ -31491,20 +31608,20 @@
 
 
 /***/ },
-/* 152 */
+/* 155 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var Bucket = __webpack_require__(96);
-	var FeatureIndex = __webpack_require__(94);
-	var vt = __webpack_require__(122);
-	var Protobuf = __webpack_require__(80);
-	var GeoJSONFeature = __webpack_require__(126);
-	var featureFilter = __webpack_require__(97);
-	var CollisionTile = __webpack_require__(128);
-	var CollisionBoxArray = __webpack_require__(129);
+	var util = __webpack_require__(25);
+	var Bucket = __webpack_require__(99);
+	var FeatureIndex = __webpack_require__(97);
+	var vt = __webpack_require__(125);
+	var Protobuf = __webpack_require__(83);
+	var GeoJSONFeature = __webpack_require__(129);
+	var featureFilter = __webpack_require__(100);
+	var CollisionTile = __webpack_require__(131);
+	var CollisionBoxArray = __webpack_require__(132);
 	
 	module.exports = Tile;
 	
@@ -31677,13 +31794,13 @@
 
 
 /***/ },
-/* 153 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var assert = __webpack_require__(99);
-	var Coordinate = __webpack_require__(24);
+	var assert = __webpack_require__(102);
+	var Coordinate = __webpack_require__(27);
 	
 	module.exports = TileCoord;
 	
@@ -31860,7 +31977,7 @@
 
 
 /***/ },
-/* 154 */
+/* 157 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -31989,15 +32106,15 @@
 
 
 /***/ },
-/* 155 */
+/* 158 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var Evented = __webpack_require__(27);
-	var Source = __webpack_require__(150);
-	var normalizeURL = __webpack_require__(74).normalizeTileURL;
+	var util = __webpack_require__(25);
+	var Evented = __webpack_require__(30);
+	var Source = __webpack_require__(153);
+	var normalizeURL = __webpack_require__(77).normalizeTileURL;
 	
 	module.exports = VectorTileSource;
 	
@@ -32121,16 +32238,16 @@
 
 
 /***/ },
-/* 156 */
+/* 159 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var ajax = __webpack_require__(73);
-	var Evented = __webpack_require__(27);
-	var Source = __webpack_require__(150);
-	var normalizeURL = __webpack_require__(74).normalizeTileURL;
+	var util = __webpack_require__(25);
+	var ajax = __webpack_require__(76);
+	var Evented = __webpack_require__(30);
+	var Source = __webpack_require__(153);
+	var normalizeURL = __webpack_require__(77).normalizeTileURL;
 	
 	module.exports = RasterTileSource;
 	
@@ -32245,17 +32362,17 @@
 
 
 /***/ },
-/* 157 */
+/* 160 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var Evented = __webpack_require__(27);
-	var TilePyramid = __webpack_require__(151);
-	var Source = __webpack_require__(150);
-	var urlResolve = __webpack_require__(158);
-	var EXTENT = __webpack_require__(96).EXTENT;
+	var util = __webpack_require__(25);
+	var Evented = __webpack_require__(30);
+	var TilePyramid = __webpack_require__(154);
+	var Source = __webpack_require__(153);
+	var urlResolve = __webpack_require__(161);
+	var EXTENT = __webpack_require__(99).EXTENT;
 	
 	module.exports = GeoJSONSource;
 	
@@ -32483,7 +32600,7 @@
 
 
 /***/ },
-/* 158 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;// Copyright 2014 Simon Lydell
@@ -32536,22 +32653,22 @@
 
 
 /***/ },
-/* 159 */
+/* 162 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var Tile = __webpack_require__(152);
-	var TileCoord = __webpack_require__(153);
-	var LngLat = __webpack_require__(160);
-	var Point = __webpack_require__(29);
-	var Evented = __webpack_require__(27);
-	var ajax = __webpack_require__(73);
-	var EXTENT = __webpack_require__(96).EXTENT;
-	var RasterBoundsArray = __webpack_require__(161).RasterBoundsArray;
-	var Buffer = __webpack_require__(98);
-	var VertexArrayObject = __webpack_require__(105);
+	var util = __webpack_require__(25);
+	var Tile = __webpack_require__(155);
+	var TileCoord = __webpack_require__(156);
+	var LngLat = __webpack_require__(163);
+	var Point = __webpack_require__(32);
+	var Evented = __webpack_require__(30);
+	var ajax = __webpack_require__(76);
+	var EXTENT = __webpack_require__(99).EXTENT;
+	var RasterBoundsArray = __webpack_require__(164).RasterBoundsArray;
+	var Buffer = __webpack_require__(101);
+	var VertexArrayObject = __webpack_require__(108);
 	
 	module.exports = VideoSource;
 	
@@ -32731,14 +32848,14 @@
 
 
 /***/ },
-/* 160 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = LngLat;
 	
-	var wrap = __webpack_require__(22).wrap;
+	var wrap = __webpack_require__(25).wrap;
 	
 	/**
 	 * Create a longitude, latitude object from a given longitude and latitude pair in degrees.
@@ -32829,13 +32946,13 @@
 
 
 /***/ },
-/* 161 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var StructArrayType = __webpack_require__(104);
+	var util = __webpack_require__(25);
+	var StructArrayType = __webpack_require__(107);
 	
 	module.exports = drawRaster;
 	
@@ -32977,22 +33094,22 @@
 
 
 /***/ },
-/* 162 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var Tile = __webpack_require__(152);
-	var TileCoord = __webpack_require__(153);
-	var LngLat = __webpack_require__(160);
-	var Point = __webpack_require__(29);
-	var Evented = __webpack_require__(27);
-	var ajax = __webpack_require__(73);
-	var EXTENT = __webpack_require__(96).EXTENT;
-	var RasterBoundsArray = __webpack_require__(161).RasterBoundsArray;
-	var Buffer = __webpack_require__(98);
-	var VertexArrayObject = __webpack_require__(105);
+	var util = __webpack_require__(25);
+	var Tile = __webpack_require__(155);
+	var TileCoord = __webpack_require__(156);
+	var LngLat = __webpack_require__(163);
+	var Point = __webpack_require__(32);
+	var Evented = __webpack_require__(30);
+	var ajax = __webpack_require__(76);
+	var EXTENT = __webpack_require__(99).EXTENT;
+	var RasterBoundsArray = __webpack_require__(164).RasterBoundsArray;
+	var Buffer = __webpack_require__(101);
+	var VertexArrayObject = __webpack_require__(108);
 	
 	module.exports = ImageSource;
 	
@@ -33144,22 +33261,22 @@
 
 
 /***/ },
-/* 163 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var browser = __webpack_require__(26);
-	var mat4 = __webpack_require__(164).mat4;
-	var FrameHistory = __webpack_require__(174);
-	var TilePyramid = __webpack_require__(151);
-	var EXTENT = __webpack_require__(96).EXTENT;
-	var pixelsToTileUnits = __webpack_require__(175);
-	var util = __webpack_require__(22);
-	var StructArrayType = __webpack_require__(104);
-	var Buffer = __webpack_require__(98);
-	var VertexArrayObject = __webpack_require__(105);
-	var RasterBoundsArray = __webpack_require__(161).RasterBoundsArray;
+	var browser = __webpack_require__(29);
+	var mat4 = __webpack_require__(167).mat4;
+	var FrameHistory = __webpack_require__(177);
+	var TilePyramid = __webpack_require__(154);
+	var EXTENT = __webpack_require__(99).EXTENT;
+	var pixelsToTileUnits = __webpack_require__(178);
+	var util = __webpack_require__(25);
+	var StructArrayType = __webpack_require__(107);
+	var Buffer = __webpack_require__(101);
+	var VertexArrayObject = __webpack_require__(108);
+	var RasterBoundsArray = __webpack_require__(164).RasterBoundsArray;
 	
 	module.exports = Painter;
 	
@@ -33188,7 +33305,7 @@
 	    this.lineWidthRange = gl.getParameter(gl.ALIASED_LINE_WIDTH_RANGE);
 	}
 	
-	util.extend(Painter.prototype, __webpack_require__(176));
+	util.extend(Painter.prototype, __webpack_require__(179));
 	
 	/*
 	 * Update the GL viewport, projection matrix, and transforms to compensate
@@ -33326,13 +33443,13 @@
 	};
 	
 	var draw = {
-	    symbol: __webpack_require__(178),
-	    circle: __webpack_require__(180),
-	    line: __webpack_require__(181),
-	    fill: __webpack_require__(182),
-	    raster: __webpack_require__(161),
-	    background: __webpack_require__(183),
-	    debug: __webpack_require__(184)
+	    symbol: __webpack_require__(181),
+	    circle: __webpack_require__(183),
+	    line: __webpack_require__(184),
+	    fill: __webpack_require__(185),
+	    raster: __webpack_require__(164),
+	    background: __webpack_require__(186),
+	    debug: __webpack_require__(187)
 	};
 	
 	Painter.prototype.render = function(style, options) {
@@ -33487,7 +33604,7 @@
 
 
 /***/ },
-/* 164 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -33518,18 +33635,18 @@
 	THE SOFTWARE. */
 	// END HEADER
 	
-	exports.glMatrix = __webpack_require__(165);
-	exports.mat2 = __webpack_require__(166);
-	exports.mat2d = __webpack_require__(167);
-	exports.mat3 = __webpack_require__(168);
-	exports.mat4 = __webpack_require__(169);
-	exports.quat = __webpack_require__(170);
-	exports.vec2 = __webpack_require__(173);
-	exports.vec3 = __webpack_require__(171);
-	exports.vec4 = __webpack_require__(172);
+	exports.glMatrix = __webpack_require__(168);
+	exports.mat2 = __webpack_require__(169);
+	exports.mat2d = __webpack_require__(170);
+	exports.mat3 = __webpack_require__(171);
+	exports.mat4 = __webpack_require__(172);
+	exports.quat = __webpack_require__(173);
+	exports.vec2 = __webpack_require__(176);
+	exports.vec3 = __webpack_require__(174);
+	exports.vec4 = __webpack_require__(175);
 
 /***/ },
-/* 165 */
+/* 168 */
 /***/ function(module, exports) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -33605,7 +33722,7 @@
 
 
 /***/ },
-/* 166 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -33628,7 +33745,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 2x2 Matrix
@@ -34047,7 +34164,7 @@
 
 
 /***/ },
-/* 167 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -34070,7 +34187,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 2x3 Matrix
@@ -34522,7 +34639,7 @@
 
 
 /***/ },
-/* 168 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -34545,7 +34662,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 3x3 Matrix
@@ -35274,7 +35391,7 @@
 
 
 /***/ },
-/* 169 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -35297,7 +35414,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 4x4 Matrix
@@ -37416,7 +37533,7 @@
 
 
 /***/ },
-/* 170 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -37439,10 +37556,10 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
-	var mat3 = __webpack_require__(168);
-	var vec3 = __webpack_require__(171);
-	var vec4 = __webpack_require__(172);
+	var glMatrix = __webpack_require__(168);
+	var mat3 = __webpack_require__(171);
+	var vec3 = __webpack_require__(174);
+	var vec4 = __webpack_require__(175);
 	
 	/**
 	 * @class Quaternion
@@ -38022,7 +38139,7 @@
 
 
 /***/ },
-/* 171 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -38045,7 +38162,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 3 Dimensional Vector
@@ -38805,7 +38922,7 @@
 
 
 /***/ },
-/* 172 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -38828,7 +38945,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 4 Dimensional Vector
@@ -39420,7 +39537,7 @@
 
 
 /***/ },
-/* 173 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* Copyright (c) 2015, Brandon Jones, Colin MacKenzie IV.
@@ -39443,7 +39560,7 @@
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE. */
 	
-	var glMatrix = __webpack_require__(165);
+	var glMatrix = __webpack_require__(168);
 	
 	/**
 	 * @class 2 Dimensional Vector
@@ -40013,7 +40130,7 @@
 
 
 /***/ },
-/* 174 */
+/* 177 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -40089,12 +40206,12 @@
 
 
 /***/ },
-/* 175 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Bucket = __webpack_require__(96);
+	var Bucket = __webpack_require__(99);
 	
 	/**
 	 * Converts a pixel value at a the given zoom level to tile units.
@@ -40118,14 +40235,14 @@
 
 
 /***/ },
-/* 176 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var path = __webpack_require__(177);
-	var assert = __webpack_require__(99);
-	var util = __webpack_require__(22);
+	var path = __webpack_require__(180);
+	var assert = __webpack_require__(102);
+	var util = __webpack_require__(25);
 	
 	// readFileSync calls must be written out long-form for brfs.
 	var definitions = {
@@ -40260,7 +40377,7 @@
 	};
 
 /***/ },
-/* 177 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -40488,18 +40605,18 @@
 	    }
 	;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(101)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(104)))
 
 /***/ },
-/* 178 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var browser = __webpack_require__(26);
-	var drawCollisionDebug = __webpack_require__(179);
-	var util = __webpack_require__(22);
-	var pixelsToTileUnits = __webpack_require__(175);
+	var browser = __webpack_require__(29);
+	var drawCollisionDebug = __webpack_require__(182);
+	var util = __webpack_require__(25);
+	var pixelsToTileUnits = __webpack_require__(178);
 	
 	
 	module.exports = drawSymbols;
@@ -40707,7 +40824,7 @@
 
 
 /***/ },
-/* 179 */
+/* 182 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -40746,12 +40863,12 @@
 
 
 /***/ },
-/* 180 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var browser = __webpack_require__(26);
+	var browser = __webpack_require__(29);
 	
 	module.exports = drawCircles;
 	
@@ -40802,15 +40919,15 @@
 
 
 /***/ },
-/* 181 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var browser = __webpack_require__(26);
-	var mat2 = __webpack_require__(164).mat2;
-	var util = __webpack_require__(22);
-	var pixelsToTileUnits = __webpack_require__(175);
+	var browser = __webpack_require__(29);
+	var mat2 = __webpack_require__(167).mat2;
+	var util = __webpack_require__(25);
+	var pixelsToTileUnits = __webpack_require__(178);
 	
 	/**
 	 * Draw a line. Under the hood this will read elements from
@@ -40980,13 +41097,13 @@
 
 
 /***/ },
-/* 182 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var pixelsToTileUnits = __webpack_require__(175);
+	var util = __webpack_require__(25);
+	var pixelsToTileUnits = __webpack_require__(178);
 	
 	module.exports = draw;
 	
@@ -41228,15 +41345,15 @@
 
 
 /***/ },
-/* 183 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var TilePyramid = __webpack_require__(151);
+	var TilePyramid = __webpack_require__(154);
 	var pyramid = new TilePyramid({ tileSize: 512 });
-	var util = __webpack_require__(22);
-	var pixelsToTileUnits = __webpack_require__(175);
+	var util = __webpack_require__(25);
+	var pixelsToTileUnits = __webpack_require__(178);
 	
 	module.exports = drawBackground;
 	
@@ -41334,17 +41451,17 @@
 
 
 /***/ },
-/* 184 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var textVertices = __webpack_require__(185);
-	var browser = __webpack_require__(26);
-	var mat4 = __webpack_require__(164).mat4;
-	var EXTENT = __webpack_require__(96).EXTENT;
-	var Buffer = __webpack_require__(98);
-	var VertexArrayObject = __webpack_require__(105);
+	var textVertices = __webpack_require__(188);
+	var browser = __webpack_require__(29);
+	var mat4 = __webpack_require__(167).mat4;
+	var EXTENT = __webpack_require__(99).EXTENT;
+	var Buffer = __webpack_require__(101);
+	var VertexArrayObject = __webpack_require__(108);
 	
 	module.exports = drawDebug;
 	
@@ -41399,7 +41516,7 @@
 
 
 /***/ },
-/* 185 */
+/* 188 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -41536,19 +41653,19 @@
 
 
 /***/ },
-/* 186 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var LngLat = __webpack_require__(160),
-	    Point = __webpack_require__(29),
-	    Coordinate = __webpack_require__(24),
-	    wrap = __webpack_require__(22).wrap,
-	    interp = __webpack_require__(33),
-	    TileCoord = __webpack_require__(153),
-	    EXTENT = __webpack_require__(96).EXTENT,
-	    glmatrix = __webpack_require__(164);
+	var LngLat = __webpack_require__(163),
+	    Point = __webpack_require__(32),
+	    Coordinate = __webpack_require__(27),
+	    wrap = __webpack_require__(25).wrap,
+	    interp = __webpack_require__(36),
+	    TileCoord = __webpack_require__(156),
+	    EXTENT = __webpack_require__(99).EXTENT,
+	    glmatrix = __webpack_require__(167);
 	
 	var vec4 = glmatrix.vec4,
 	    mat4 = glmatrix.mat4,
@@ -41980,7 +42097,7 @@
 
 
 /***/ },
-/* 187 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41994,7 +42111,7 @@
 	 */
 	module.exports = Hash;
 	
-	var util = __webpack_require__(22);
+	var util = __webpack_require__(25);
 	
 	function Hash() {
 	    util.bindAll([
@@ -42059,24 +42176,24 @@
 
 
 /***/ },
-/* 188 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var handlers = {
-	    scrollZoom: __webpack_require__(189),
-	    boxZoom: __webpack_require__(190),
-	    dragRotate: __webpack_require__(192),
-	    dragPan: __webpack_require__(193),
-	    keyboard: __webpack_require__(194),
-	    doubleClickZoom: __webpack_require__(195),
-	    touchZoomRotate: __webpack_require__(196)
+	    scrollZoom: __webpack_require__(192),
+	    boxZoom: __webpack_require__(193),
+	    dragRotate: __webpack_require__(195),
+	    dragPan: __webpack_require__(196),
+	    keyboard: __webpack_require__(197),
+	    doubleClickZoom: __webpack_require__(198),
+	    touchZoomRotate: __webpack_require__(199)
 	};
 	
-	var DOM = __webpack_require__(28),
-	    util = __webpack_require__(22),
-	    Point = __webpack_require__(29);
+	var DOM = __webpack_require__(31),
+	    util = __webpack_require__(25),
+	    Point = __webpack_require__(32);
 	
 	module.exports = Interaction;
 	
@@ -42390,14 +42507,14 @@
 
 
 /***/ },
-/* 189 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var DOM = __webpack_require__(28),
-	    browser = __webpack_require__(26),
-	    util = __webpack_require__(22);
+	var DOM = __webpack_require__(31),
+	    browser = __webpack_require__(29),
+	    util = __webpack_require__(25);
 	
 	module.exports = ScrollZoomHandler;
 	
@@ -42572,14 +42689,14 @@
 
 
 /***/ },
-/* 190 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var DOM = __webpack_require__(28),
-	    LngLatBounds = __webpack_require__(191),
-	    util = __webpack_require__(22);
+	var DOM = __webpack_require__(31),
+	    LngLatBounds = __webpack_require__(194),
+	    util = __webpack_require__(25);
 	
 	module.exports = BoxZoomHandler;
 	
@@ -42752,14 +42869,14 @@
 
 
 /***/ },
-/* 191 */
+/* 194 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = LngLatBounds;
 	
-	var LngLat = __webpack_require__(160);
+	var LngLat = __webpack_require__(163);
 	
 	/**
 	 * Creates a bounding box from the given pair of points. If parameteres are omitted, a `null` bounding box is created.
@@ -42930,14 +43047,14 @@
 
 
 /***/ },
-/* 192 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var DOM = __webpack_require__(28),
-	    Point = __webpack_require__(29),
-	    util = __webpack_require__(22);
+	var DOM = __webpack_require__(31),
+	    Point = __webpack_require__(32),
+	    util = __webpack_require__(25);
 	
 	module.exports = DragRotateHandler;
 	
@@ -43178,13 +43295,13 @@
 
 
 /***/ },
-/* 193 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var DOM = __webpack_require__(28),
-	    util = __webpack_require__(22);
+	var DOM = __webpack_require__(31),
+	    util = __webpack_require__(25);
 	
 	module.exports = DragPanHandler;
 	
@@ -43412,7 +43529,7 @@
 
 
 /***/ },
-/* 194 */
+/* 197 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43540,7 +43657,7 @@
 
 
 /***/ },
-/* 195 */
+/* 198 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43599,13 +43716,13 @@
 
 
 /***/ },
-/* 196 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var DOM = __webpack_require__(28),
-	    util = __webpack_require__(22);
+	var DOM = __webpack_require__(31),
+	    util = __webpack_require__(25);
 	
 	module.exports = TouchZoomRotateHandler;
 	
@@ -43812,17 +43929,17 @@
 
 
 /***/ },
-/* 197 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var util = __webpack_require__(22);
-	var interpolate = __webpack_require__(33);
-	var browser = __webpack_require__(26);
-	var LngLat = __webpack_require__(160);
-	var LngLatBounds = __webpack_require__(191);
-	var Point = __webpack_require__(29);
+	var util = __webpack_require__(25);
+	var interpolate = __webpack_require__(36);
+	var browser = __webpack_require__(29);
+	var LngLat = __webpack_require__(163);
+	var LngLatBounds = __webpack_require__(194);
+	var Point = __webpack_require__(32);
 	
 	/**
 	 * Options common to Map#jumpTo, Map#easeTo, and Map#flyTo, controlling the destination
@@ -44594,14 +44711,14 @@
 
 
 /***/ },
-/* 198 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Control = __webpack_require__(199);
-	var DOM = __webpack_require__(28);
-	var util = __webpack_require__(22);
+	var Control = __webpack_require__(202);
+	var DOM = __webpack_require__(31);
+	var util = __webpack_require__(25);
 	
 	module.exports = Attribution;
 	
@@ -44679,7 +44796,7 @@
 
 
 /***/ },
-/* 199 */
+/* 202 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -44734,14 +44851,14 @@
 
 
 /***/ },
-/* 200 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Control = __webpack_require__(199);
-	var DOM = __webpack_require__(28);
-	var util = __webpack_require__(22);
+	var Control = __webpack_require__(202);
+	var DOM = __webpack_require__(31);
+	var util = __webpack_require__(25);
 	
 	module.exports = Navigation;
 	
@@ -44856,15 +44973,15 @@
 
 
 /***/ },
-/* 201 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var Control = __webpack_require__(199);
-	var browser = __webpack_require__(26);
-	var DOM = __webpack_require__(28);
-	var util = __webpack_require__(22);
+	var Control = __webpack_require__(202);
+	var browser = __webpack_require__(29);
+	var DOM = __webpack_require__(31);
+	var util = __webpack_require__(25);
 	
 	module.exports = Geolocate;
 	
@@ -44937,17 +45054,17 @@
 
 
 /***/ },
-/* 202 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	module.exports = Popup;
 	
-	var util = __webpack_require__(22);
-	var Evented = __webpack_require__(27);
-	var DOM = __webpack_require__(28);
-	var LngLat = __webpack_require__(160);
+	var util = __webpack_require__(25);
+	var Evented = __webpack_require__(30);
+	var DOM = __webpack_require__(31);
+	var LngLat = __webpack_require__(163);
 	
 	/**
 	 * Creates a popup component
