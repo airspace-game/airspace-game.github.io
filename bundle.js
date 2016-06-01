@@ -10442,6 +10442,10 @@
 	  return Date.now() * 0.001;
 	}
 	
+	function radians(degrees) {
+	  return degrees * (Math.PI / 180);
+	}
+	
 	// # lerp
 	//
 	// Interpolates `i` from range `il..ih` to `ol..oh`.
@@ -10452,6 +10456,22 @@
 	
 	function lerp(il, i, ih, ol, oh) {
 	  return ((i - il) / (ih - il)) * (oh - ol) + ol;
+	}
+	
+	function clamp(a, i, b) {
+	  if(a > b) {
+	    var temp = a;
+	    a = b;
+	    b = temp;
+	  }
+	  
+	  if(a > i) return a;
+	  if(b < i) return b;
+	  return i;
+	}
+	
+	function clerp(il, i, ih, ol, oh) {
+	  return lerp(il, clamp(il, i, ih), ih, ol, oh);
 	}
 	
 	// # getValue
@@ -10489,7 +10509,9 @@
 	}
 	
 	exports.time = time;
+	exports.radians = radians;
 	exports.lerp = lerp;
+	exports.clerp = clerp;
 	exports.getValue = getValue;
 	exports.withScope = withScope;
 
@@ -10559,10 +10581,34 @@
 	    super();
 	
 	    this.aircraft = [];
+	
+	    this.initDemoAircraft();
+	  }
+	
+	  initDemoAircraft() {
+	
+	    function randrange() {
+	      return util.lerp(0, Math.random(), 1, -0.2, 0.2);
+	    }
+	    
+	    for(var i=0; i<100; i++) {
+	      this.addAircraft(new aircraft.Aircraft({
+	        callsign: 'VX0001',
+	        model: 'foo',
+	        position: [-122.366978 + randrange(), 37.627525 + randrange()],
+	        altitude: util.lerp(0, Math.random(), 1, 100, 10000)
+	      }));
+	    }
 	  }
 	
 	  addAircraft(aircraft) {
 	    aircraft.setAirspace(this);
+	
+	    this.aircraft.push(aircraft);
+	  }
+	
+	  getVisibleAircraft() {
+	    return this.aircraft;
 	  }
 	
 	  tick() {
@@ -10600,6 +10646,9 @@
 	
 	    this.callsign = util.getValue(options, 'callsign', new Error('expected aircraft callsign'));
 	    this.model = util.getValue(options, 'model', new Error('expected aircraft model'));
+	
+	    this.position = util.getValue(options, 'position', [-122, 37]);
+	    this.altitude = util.getValue(options, 'altitude', 0);
 	  }
 	
 	  setAirspace(options) {
@@ -10674,6 +10723,8 @@
 	
 	    this.app.setLoadingMessage('Downloading map data');
 	
+	    this.map.transform.altitude = 2;
+	
 	    // Set up map load handler.
 	    
 	    this.map.on('load', util.withScope(this, function() {
@@ -10695,9 +10746,9 @@
 	    this.initAirspaceLayer();
 	
 	  }
-	
+	  
 	  initAirspaceLayer() {
-	    this.airspace_layer = new airspace_layer.AirspaceLayer(this);
+	    this.airspace_layer = new airspace_layer.AirspaceLayer(this, this.app.airspace);
 	
 	    this.element.append(this.airspace_layer.element);
 	    
@@ -45389,16 +45440,18 @@
 	
 	class AirspaceLayer extends events.Events {
 	
-	  constructor(map) {
+	  constructor(map, airspace) {
 	    super();
 	
 	    this.map = map;
+	    this.airspace = airspace;
 	
 	    this.element = $('<canvas></canvas>');
 	    this.element.addClass('airspace-layer');
 	
 	    this.gl = twgl.getWebGLContext(this.element.get(0), {
-	      alpha: true
+	      //alpha: true,
+	      //premultipliedAlpha: false
 	    });
 	
 	    this.initShaders();
@@ -45434,11 +45487,44 @@
 	      'precision mediump float;',
 	      'uniform vec3 uColor;',
 	      'uniform float uRadius;',
+	      'uniform float uAlpha;',
 	      'varying vec2 vPosition;',
 	      'void main() {',
 	      '  float blur = (1.0 / uRadius) * 1.0;',
 	      '  float alpha = 1.0 - smoothstep(1.0 - blur, 1.0, length(vPosition));',
-	      '  gl_FragColor = vec4(uColor * alpha, alpha);',
+	      '  gl_FragColor = vec4(uColor, alpha * uAlpha);',
+	      '}'
+	    ].join('\n'));
+	    
+	    this.createShader('line', [
+	      'precision mediump float;',
+	      'attribute vec2 aPosition;',
+	      'uniform vec2 uPosition;',
+	      'uniform vec2 uResolutionInverse;',
+	      'uniform vec2 uSize;',
+	      'uniform float uAngle;',
+	      'uniform float uWidth;',
+	      'varying vec2 vPosition;',
+	      'void main() {',
+	      '  vPosition = aPosition;',
+	      '  vec2 spos = aPosition * uSize;',
+	      '  vec2 rotation = vec2(spos.y * sin(uAngle) + spos.x * cos(uAngle), spos.x * sin(uAngle) - spos.y * cos(uAngle));',
+	      '  vec2 position = vec2(uPosition.x * 2.0 * uResolutionInverse.x - 1.0, 1.0 - (uPosition.y * 2.0 * uResolutionInverse.y));',
+	      '  position = position + rotation * uResolutionInverse * 2.0;',
+	      '  gl_Position = vec4(position, 0.5, 1.0);',
+	      '}'
+	    ].join('\n'), [
+	      'precision mediump float;',
+	      'uniform vec2 uSize;',
+	      'uniform vec3 uColor;',
+	      'uniform float uAlpha;',
+	      'varying vec2 vPosition;',
+	      'void main() {',
+	      '  float blurx = (1.0 / uSize.x) * 0.75;',
+	      '  float blury = (1.0 / uSize.y) * 0.75;',
+	      '  float alpha = 1.0 - smoothstep(1.0 - blurx, 1.0, abs(vPosition.x));',
+	      '  alpha *= 1.0 - smoothstep(1.0 - blury, 1.0, abs(vPosition.y));',
+	      '  gl_FragColor = vec4(uColor, alpha * uAlpha);',
 	      '}'
 	    ].join('\n'));
 	    
@@ -45463,19 +45549,21 @@
 	    
 	  }
 	
-	  drawCircle(lnglat, options) {
+	  drawCircle(position, options) {
 	    if(!options) options = {};
-	    
-	    var pos = this.map.map.project(lnglat);
 	
+	    var alpha = util.getValue(options, 'alpha', 1);
+	    if(alpha <= 0) return;
+	    
 	    var uniforms = {
 	      uTime: util.time() * 0.001,
 	      uResolutionInverse: [
 	        1 / this.gl.canvas.width,
 	        1 / this.gl.canvas.height
 	      ],
-	      uPosition: [pos.x, pos.y],
+	      uPosition: position,
 	      uRadius: util.getValue(options, 'radius', 4),
+	      uAlpha: alpha,
 	      uColor: util.getValue(options, 'color', [
 	        112 / 255,
 	        180 / 255,
@@ -45489,13 +45577,115 @@
 	    twgl.drawBufferInfo(this.gl, this.gl.TRIANGLES, this.buffers['square']);
 	  }
 	  
+	  drawLine(start, end, options) {
+	    if(!options) options = {};
+	
+	    var alpha = util.getValue(options, 'alpha', 1);
+	    if(alpha <= 0) return;
+	
+	    var center = [
+	      (end[0] + start[0]) * 0.5,
+	      (end[1] + start[1]) * 0.5
+	    ];
+	
+	    var length = Math.sqrt(Math.pow(end[0] - start[0], 2) + Math.pow(end[1] - start[1], 2)) * 0.5;
+	
+	    var angle = Math.atan2(end[0] - start[0], end[1] - start[1]);
+	
+	    var uniforms = {
+	      uTime: util.time() * 0.001,
+	      uResolutionInverse: [
+	        1 / this.gl.canvas.width,
+	        1 / this.gl.canvas.height
+	      ],
+	      uSize: [util.getValue(options, 'width', 1), length],
+	      uAlpha: alpha,
+	      uAngle: angle,
+	      uPosition: center,
+	      uColor: util.getValue(options, 'color', [
+	        112 / 255,
+	        180 / 255,
+	        194 / 255
+	      ])
+	    };
+	
+	    this.gl.useProgram(this.shaders['line'].program);
+	    twgl.setBuffersAndAttributes(this.gl, this.shaders['line'], this.buffers['square']);
+	    twgl.setUniforms(this.shaders['line'], uniforms);
+	    twgl.drawBufferInfo(this.gl, this.gl.TRIANGLES, this.buffers['square']);
+	  }
+	  
+	  drawCircleMap(lnglat, options) {
+	    if(!options) options = {};
+	    
+	    var pos = this.map.map.project(lnglat);
+	
+	    this.drawCircle([pos.x, pos.y], options);
+	
+	  }
+	  
+	  drawLineMap(start, end, options) {
+	    if(!options) options = {};
+	    
+	    start = this.map.map.project(start);
+	    start = [start.x, start.y];
+	    
+	    end = this.map.map.project(end);
+	    end = [end.x, end.y];
+	
+	    this.drawLine(start, end, options);
+	
+	  }
+	
+	  drawDot(lnglat, altitude, options) {
+	    if(!options) options = {};
+	
+	    // When `0`, pitch makes no difference to the altitude (it's
+	    // always drawn as if the map is tilted); when it's `1`, pitch is
+	    // taken into account.
+	    
+	    var pitchFactor = 1;
+	    
+	    var zoom = util.lerp(0, Math.pow(2, this.map.map.getZoom()), Math.pow(2, 20), 0.0, 10);
+	    var pitch = 1.0 - (Math.cos(util.radians(this.map.map.getPitch())) * pitchFactor);
+	    var pixel_altitude = pitch * altitude * zoom;
+	    var pos = this.map.map.project(lnglat);
+	
+	    var start = [pos.x, pos.y - pixel_altitude];
+	    var end = [pos.x, pos.y];
+	
+	    if(!('alpha' in options)) {
+	      var fadeStart = util.getValue(options, 'fadeStart', 6);
+	      var fadeEnd   = util.getValue(options, 'fadeEnd', 5);
+	
+	      options.alpha = util.clerp(fadeStart, this.map.map.getZoom(), fadeEnd, 1, 0);
+	
+	      console.log(options.alpha);
+	    }
+	
+	    options.radius = util.lerp(3, this.map.map.getZoom(), 15, 0, 6);
+	    
+	    this.drawCircle([pos.x, pos.y - pixel_altitude], options);
+	    
+	    this.drawLine(start, end, options);
+	  }
+	  
 	  render() {
 	    var gl = this.gl;
 	
+	    gl.enable(gl.BLEND);
+	    gl.disable(gl.DEPTH_TEST);
+	    gl.blendFuncSeparate(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA);
+	
 	    twgl.resizeCanvasToDisplaySize(gl.canvas);
 	    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+	
+	    var aircraft = this.airspace.getVisibleAircraft();
 	    
-	    this.drawCircle([-122.366978, 37.627525]);
+	    for(var i=0; i<aircraft.length; i++) {
+	      this.drawDot(aircraft[i].position, aircraft[i].altitude);
+	    }
+	    
 	  }
 	
 	}
